@@ -125,13 +125,6 @@ O sistema suporta três modos de tema:
 - `TopClientsCards` - Cards de top clientes
 - `SalesChart` - Gráfico de vendas
 
-## 🔧 Configuração
-
-### Variáveis de Ambiente
-```env
-VITE_API_URL=http://localhost:3000/api
-```
-
 ### Tailwind CSS
 O projeto usa configuração customizada do Tailwind com:
 - Cores personalizadas para cards
