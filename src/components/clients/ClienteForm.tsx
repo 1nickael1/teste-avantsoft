@@ -119,18 +119,20 @@ export const ClienteForm: React.FC<ClienteFormProps> = ({
         )}
       </div>
 
-      <div className="flex justify-end space-x-3 pt-4">
+      <div className="flex flex-col sm:flex-row justify-end gap-3 pt-4">
         <Button
           type="button"
           variant="outline"
           onClick={onCancel}
           disabled={loading}
+          className="w-full sm:w-auto"
         >
           Cancelar
         </Button>
         <Button
           type="submit"
           disabled={loading}
+          className="w-full sm:w-auto"
         >
           {loading ? 'Salvando...' : (cliente ? 'Atualizar' : 'Criar')}
         </Button>

@@ -40,10 +40,10 @@ export const DashboardPage: React.FC = () => {
   const estatisticas = calcularEstatisticas(clientes);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-foreground mb-2">Dashboard</h1>
-        <p className="text-muted-foreground">Visão geral das vendas e clientes</p>
+        <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1 sm:mb-2">Dashboard</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">Visão geral das vendas e clientes</p>
       </div>
 
       <TopClientsCards
@@ -54,15 +54,20 @@ export const DashboardPage: React.FC = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle>Vendas por Dia</CardTitle>
+          <CardTitle className="text-lg sm:text-xl">Vendas por Dia</CardTitle>
         </CardHeader>
-        <CardContent>
-          <SalesChart data={estatisticas.vendasPorDia} />
+        <CardContent className="p-4 sm:p-6">
+          <div className="h-64 sm:h-80">
+            <SalesChart data={estatisticas.vendasPorDia} />
+          </div>
         </CardContent>
       </Card>
 
-      <TopSellCards mesMaiorVolume={estatisticas.mesMaiorVolume || null} idadeMedia={estatisticas.idadeMedia || null} totalVendido={estatisticas.totalVendido || null} />
-      
+      <TopSellCards 
+        mesMaiorVolume={estatisticas.mesMaiorVolume || null} 
+        idadeMedia={estatisticas.idadeMedia || null} 
+        totalVendido={estatisticas.totalVendido || null} 
+      />
     </div>
   );
 }; 

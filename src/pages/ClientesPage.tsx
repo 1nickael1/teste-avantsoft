@@ -61,13 +61,16 @@ export const ClientesPage: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-foreground mb-2">Clientes</h1>
-          <p className="text-muted-foreground">Gerencie os clientes do sistema</p>
+          <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1 sm:mb-2">Clientes</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">Gerencie os clientes do sistema</p>
         </div>
-        <Button onClick={() => setShowForm(true)}>
+        <Button 
+          onClick={() => setShowForm(true)}
+          className="w-full sm:w-auto"
+        >
           Adicionar Cliente
         </Button>
       </div>
@@ -75,7 +78,9 @@ export const ClientesPage: React.FC = () => {
       {showForm && (
         <Card>
           <CardHeader>
-            <CardTitle>{editingCliente ? 'Editar Cliente' : 'Novo Cliente'}</CardTitle>
+            <CardTitle className="text-lg sm:text-xl">
+              {editingCliente ? 'Editar Cliente' : 'Novo Cliente'}
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ClienteForm
@@ -90,9 +95,9 @@ export const ClientesPage: React.FC = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle>Lista de Clientes</CardTitle>
+          <CardTitle className="text-lg sm:text-xl">Lista de Clientes</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-0 sm:p-6">
           <ClienteList
             clientes={clientes}
             onEdit={handleEdit}

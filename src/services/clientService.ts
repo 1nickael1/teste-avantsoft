@@ -55,6 +55,23 @@ const mockApiResponse: ApiResponse = {
             { data: "2024-01-04", valor: 90 }
           ]
         }
+      },
+      {
+        info: {
+          nomeCompleto: "Eduardo Moreira Silva",
+          detalhes: {
+            email: "eduardo@example.com",
+            nascimento: "1990-01-01"
+          }
+        },
+        estatisticas: {
+          vendas: [
+            { data: "2024-01-01", valor: 10 },
+            { data: "2024-01-02", valor: 10 },
+            { data: "2024-01-03", valor: 10 },
+            { data: "2024-01-04", valor: 10 }
+          ]
+        }
       }
     ]
   },

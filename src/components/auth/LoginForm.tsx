@@ -10,16 +10,15 @@ import { useNavigate } from 'react-router-dom';
 export const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  
+  const [error, setError] = useState('');
   const { login } = useAuthStore();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
     setLoading(true);
+    setError('');
 
     try {
       await login(email, password);
@@ -32,10 +31,10 @@ export const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background py-12 px-4 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-sm">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl text-center">Login do Sistema</CardTitle>
+          <CardTitle className="text-xl sm:text-2xl text-center">Login do Sistema</CardTitle>
           <CardDescription className="text-center">
             Entre com suas credenciais para acessar o sistema
           </CardDescription>
@@ -75,7 +74,7 @@ export const LoginForm: React.FC = () => {
               {loading ? 'Entrando...' : 'Entrar'}
             </Button>
 
-            <div className="text-center text-sm text-muted-foreground space-y-1">
+            <div className="text-center text-xs sm:text-sm text-muted-foreground space-y-1">
               <p className="font-medium">Credenciais de teste:</p>
               <p>Email: admin@teste.com</p>
               <p>Senha: 123456</p>

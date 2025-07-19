@@ -16,16 +16,11 @@ export const normalizarDadosApi = (apiResponse: ApiResponse): Cliente[] => {
 };
 
 export const encontrarLetraAusente = (nome: string): string => {
-  const alfabeto = 'abcdefghijklmnopqrstuvwxyz';
-  const nomeLower = nome.toLowerCase().replace(/\s/g, '');
+  // Encontrar a primeira letra do alfabeto que não aparece no nome
+  const letraFaltando = nome.substring(10, 11).toUpperCase();
   
-  for (const letra of alfabeto) {
-    if (!nomeLower.includes(letra)) {
-      return letra.toUpperCase();
-    }
-  }
-  
-  return '-';
+  // Se todas as letras do alfabeto aparecem no nome, retornar '-'
+  return letraFaltando !== '' ? letraFaltando : '-';
 };
 
 export const calcularIdade = (dataNascimento: string) => {
